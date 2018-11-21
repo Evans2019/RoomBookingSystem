@@ -15,6 +15,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        
 
         <!-- Styles -->
@@ -249,21 +250,37 @@
                             padding: 0 15px;
                         }
                     }
+
+                    /* Social medias icon mouse hover */
+                    .fa-youtube:hover {
+                        color: red;
+                    }
+                    .fa-google:hover {
+                        color: red;
+                    }
+                    .fa-github:hover {
+                        color: black;
+                    }
+                    .fa-twitter:hover {
+                        color: #38A1F3;
+                    }
+                    .fa-facebook:hover {
+                        color: #3b5998;
+                    }
+                    .fa-linkedin:hover {
+                        color: #0077B5;
+                    }
         </style>
     </head>
     <body> 
       </div>
         <div class="flex-center position-ref full-height">
-           
-
             <div class="container">
-                
-                    
                             <label for="exampleFormControlSelect1" style="font-size:22px;">Room Booking System</label>
-                            <br>
-                                    <div class="row">
+                                    <div class="row" style="margin-top:40px">
                                       <div class="col">
                                           <i class=" fa fa-calendar" style="font-size:58px;color:black">
+                                              
                                               
                                           </i>
                                         </div>
@@ -274,25 +291,63 @@
                                     </div>
                                     </div>
                                     <div id="Login" class="holder">
-                                            <form>
+                                            <form method="POST" action="{{ route('login') }}">
+                                                    @csrf
                                                     <div class="form-group">
-                                                      <label for="exampleInputEmail1">Email address</label>
-                                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                                    </div>
-                                                    <div class="form-group">
-                                                      <label for="exampleInputPassword1">Password</label>
-                                                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                    </div>
-                                                    <div class="form-group form-check">
-                                                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                                    </div>
-                                                    <button id="Submit" type="button" class="btn btn-outline-success">Login</button>
-                                                  </form>
+                                                      <div class="form-group row">
+                                                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                
+                                                            <div class="col-md-6">
+                                                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                
+                                                                @if ($errors->has('email'))
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                                    </span>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    
+                                                                <div class="col-md-6">
+                                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                    
+                                                                    @if ($errors->has('password'))
+                                                                        <span class="invalid-feedback" role="alert">
+                                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                                        </span>
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-0">
+                                                            <div class="col-md-8 offset-md-4">
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    {{ __('Login') }}
+                                                                </button>
+                                
+                                                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                                    {{ __('Forgot Your Password?') }}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                  <div style="text-align:center;margin: 0 auto;margin-top:40px" >
+                                                        <label for="exampleInputEmail1">Login With</label>
+                                                </div>
+                                                <div style="text-align:center;margin: 0 auto;color:black"  >
+                                                        <a href="#" style="color:gray" class="hoverable"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-facebook" ></i></a> 
+                                                       <a href="#" style="color:gray"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-twitter" ></i></a> 
+                                                       <a href="#" style="color:gray"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-google"></i></a>
+                                                       <a href="#" style="color:gray"><i style="font-size:24px;padding:7px 7px 7px 7px;"  class="fa fa-linkedin"></i></a>
+                                                       <a href="#" style="color:gray"><i style="font-size:24px;padding:7px 7px 7px 7px;"  class="fa fa-github"></i></a> 
+                                                       <a href="#" style="color:gray"><i style="font-size:24px;padding:7px 7px 7px 7px;"  class="fa fa-youtube"></i></a>
+                                                </div> 
                                     </div>
-                                    <br>
-                                    <div class="Dashbord">
+                                    <div class="Dashbord" style="margin-top:40px">
                                     <ul class="nav nav-tabs">
                                             <li class="nav-item">
                                               <a id="home" class="nav-link active" href="#">Home</a>
@@ -301,9 +356,8 @@
                                                     <a id="BookRoom" class="nav-link " href="#">Book Room</a>
                                             </li>
                                           </ul>    
-                                          <br>
-                            <br>
-                            <div class="row" >
+                                      
+                            <div class="row" style="margin-top:80px">
                               <div class="col">
                                     <div class="Rooms">
                                             <div class="row">
@@ -390,12 +444,6 @@
                 startTime();
                 $(".Booking").hide();  
                 $(".Dashbord").hide();  
-
-                    $('#Submit').click(function() {
-                    $("#Login").hide();
-                    $(".Dashbord").slideDown(800);
-                });
-
                            
                     $('#home').click(function() {
                     $(this).addClass('active');
