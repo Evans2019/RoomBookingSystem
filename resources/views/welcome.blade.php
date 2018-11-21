@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-        <title>Laravel</title>
+        <title>Room Booking System</title>
         <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -257,7 +257,8 @@
            
 
             <div class="container">
-                    <div class="holder">
+                
+                    
                             <label for="exampleFormControlSelect1" style="font-size:22px;">Room Booking System</label>
                             <br>
                                     <div class="row">
@@ -272,7 +273,26 @@
                                           <div id="date"></div>
                                     </div>
                                     </div>
+                                    <div id="Login" class="holder">
+                                            <form>
+                                                    <div class="form-group">
+                                                      <label for="exampleInputEmail1">Email address</label>
+                                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="exampleInputPassword1">Password</label>
+                                                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                    </div>
+                                                    <div class="form-group form-check">
+                                                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                                    </div>
+                                                    <button id="Submit" type="button" class="btn btn-outline-success">Login</button>
+                                                  </form>
+                                    </div>
                                     <br>
+                                    <div class="Dashbord">
                                     <ul class="nav nav-tabs">
                                             <li class="nav-item">
                                               <a id="home" class="nav-link active" href="#">Home</a>
@@ -331,8 +351,9 @@
                                             </select>
                                          </div>
                                          <button type="button" class="btn btn-outline-success">Book</button>
-                                </div>    
-                        </div>    
+                                </div>   
+                            </div> 
+                          
             </div>
         </div>
     </body>
@@ -367,7 +388,15 @@
                 }, 500);
                 }
                 startTime();
-                $(".Booking").hide();              
+                $(".Booking").hide();  
+                $(".Dashbord").hide();  
+
+                    $('#Submit').click(function() {
+                    $("#Login").hide();
+                    $(".Dashbord").slideDown(800);
+                });
+
+                           
                     $('#home').click(function() {
                     $(this).addClass('active');
                     $("#BookRoom").removeClass('active');
