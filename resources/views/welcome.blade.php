@@ -258,7 +258,7 @@
 
             <div class="container">
                     <div class="holder">
-                            <label for="exampleFormControlSelect1" style="font-size:22px;">ROoom Booking System</label>
+                            <label for="exampleFormControlSelect1" style="font-size:22px;">Room Booking System</label>
                             <br>
                                     <div class="row">
                                       <div class="col">
@@ -332,14 +332,10 @@
                                          </div>
                                          <button type="button" class="btn btn-outline-success">Book</button>
                                 </div>    
-                        </div> 
-                        
+                        </div>    
             </div>
-            
         </div>
-        
     </body>
-   
     <script>
             $( document ).ready(function() {
 
@@ -371,31 +367,21 @@
                 }, 500);
                 }
                 startTime();
-                
-                
-                
-                $(".Booking").hide();
-
- $(".Rooms").hide();
-                
+                $(".Booking").hide();              
                     $('#home').click(function() {
                     $(this).addClass('active');
                     $("#BookRoom").removeClass('active');
                     $(".Rooms").slideDown(800);
                     $(".Booking").hide();
                 });
-
-                
+                //Displaying Booking form
                 $('#BookRoom').click(function() {
                    
                     $(this).addClass('active');
                     $("#home").removeClass('active');
                     $(".Booking").slideDown(800);
                     $(".Rooms").hide();
-                });
-                
-                                
+                });            
             });
-
     </script>
 </html>
