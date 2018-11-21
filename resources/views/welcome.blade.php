@@ -341,7 +341,7 @@
                                                 <div style="text-align:center;margin: 0 auto;color:black"  >
                                                         <a href="#" style="color:gray" class="hoverable"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-facebook" ></i></a> 
                                                        <a href="#" style="color:gray"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-twitter" ></i></a> 
-                                                       <a href="#" style="color:gray"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-google"></i></a>
+                                                       <a href="{{ url('/redirect') }}" style="color:gray"><i style="font-size:24px; padding:7px 7px 7px 7px;" class="fa fa-google"></i></a>
                                                        <a href="#" style="color:gray"><i style="font-size:24px;padding:7px 7px 7px 7px;"  class="fa fa-linkedin"></i></a>
                                                        <a href="#" style="color:gray"><i style="font-size:24px;padding:7px 7px 7px 7px;"  class="fa fa-github"></i></a> 
                                                        <a href="#" style="color:gray"><i style="font-size:24px;padding:7px 7px 7px 7px;"  class="fa fa-youtube"></i></a>
